@@ -1,4 +1,16 @@
-﻿using static System.Net.Mime.MediaTypeNames;
+﻿try
+{
+    int r = Convert.ToInt32(Console.ReadLine()) / Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine(r);
+}
+catch(DivideByZeroException ex)
+{
+    Console.WriteLine("Não pode ser dividido por zero!");
+}
+catch(Exception ex)
+{
+    Console.WriteLine(ex.Message);
+}
 
 Console.WriteLine("SISTEMA DE CONTA BANCÁRIA");
 Console.WriteLine("");

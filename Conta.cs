@@ -8,6 +8,11 @@
     public string _nomePropietario;
     private double _saldo;
 
+    public Conta()
+    {
+
+    }
+
     public void Depositar(double valor)
     {
         try
@@ -25,6 +30,10 @@
         }
         catch (Exception ex) {
             Console.WriteLine(ex.Message);
+        }
+        finally
+        {
+            Console.WriteLine("Fechando conexão com banco de dados");
         }
     }
 
