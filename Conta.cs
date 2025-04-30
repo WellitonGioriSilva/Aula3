@@ -13,6 +13,15 @@
 
     }
 
+    public Conta(int id, string agencia, string numeroConta, string nomePropietario, double saldo)
+    {
+        _id = id;
+        _agencia = agencia;
+        _numeroConta = numeroConta;
+        _nomePropietario = nomePropietario;
+        _saldo = saldo;
+    }
+
     public void Depositar(double valor)
     {
         try
