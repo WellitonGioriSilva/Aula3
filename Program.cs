@@ -1,4 +1,20 @@
-﻿try
+﻿
+try
+{
+    Funcionario f = new Funcionario();
+    f.setNome("Elias");
+    f.setCpf("053.643.911-75");
+    f.setDataAdmissao(DateTime.Now);
+    f.setSalario(3000);
+    f.setDataNascimento(new DateTime(2000, 12, 01));
+}
+catch (Exception e)
+{
+    Console.WriteLine(e.Message);
+}
+
+return;
+try
 {
     Console.WriteLine("SISTEMA DE CONTA BANCÁRIA");
     Console.WriteLine("");
