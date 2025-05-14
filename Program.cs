@@ -1,12 +1,12 @@
 ﻿
+
+Pessoa p = new Pessoa(1, "Giori", "043.366.062-77", 19, "Masculino", 165, 73.8);
+Pessoa p1 = new Pessoa();
+return;
+
 try
 {
-    Funcionario f = new Funcionario();
-    f.setNome("Elias");
-    f.setCpf("053.643.911-75");
-    f.setDataAdmissao(DateTime.Now);
-    f.setSalario(3000);
-    f.setDataNascimento(new DateTime(2000, 12, 01));
+    Funcionario f = new Funcionario(1, "Elias", "053.643.911-75", new DateTime(2000, 12, 01), "", DateTime.Now, 1000);
 }
 catch (Exception e)
 {

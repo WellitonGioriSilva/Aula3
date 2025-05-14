@@ -1,22 +1,29 @@
-﻿class Funcionario
+﻿class Pessoa
 {
     private int _id;
     private string _nome;
     private string _cpf;
-    private DateTime _dataNascimento;
-    private string _email;
-    private DateTime _dataAdmissao;
-    private double _salario;
+    private int _idade;
+    private string _sexo;
+    private double _altura;
+    private double _peso;
 
-    public Funcionario(int id, string nome, string cpf, DateTime dataNascimento, string email, DateTime dataAdmissao, double salario)
+    public Pessoa(int id, string nome, string cpf, int idade, string sexo, double altura, double peso)
     {
         setId(id);
         setNome(nome);
         setCpf(cpf);
-        setDataNascimento(dataNascimento);
-        setEmail(email);
-        setDataAdmissao(dataAdmissao);
-        setSalario(salario);
+        setIdade(idade);
+        setSexo(sexo);
+        setAltura(altura);
+        setPeso(peso);
+
+        Calculos.IMC(peso, altura / 100);
+    }
+
+    public Pessoa()
+    {
+
     }
 
     // GET e SET
@@ -75,67 +82,67 @@
         return _cpf;
     }
 
-    public void setDataNascimento(DateTime dataNascimento)
+    public void setIdade(int idade)
     {
-        if (dataNascimento < DateTime.Now)
+        if (idade > 0)
         {
-            _dataAdmissao = dataNascimento;
+            _idade = idade;
         }
         else
         {
-            throw new Exception("A Data de Nascimento deve ser menor à atual!");
+            throw new Exception("A idade deve ser maior do que zero!");
         }
     }
-    public DateTime getDataNascimento()
+    public int getIdade()
     {
-        return _dataNascimento;
+        return _idade;
     }
 
-    public void setEmail(string email)
+    public void setSexo(string sexo)
     {
-        if (email.Length > 0)
+        if (sexo == "Masculino" || sexo == "Feminino")
         {
-            _email = email;
+            _sexo = sexo;
         }
         else
         {
-            throw new Exception("O Email não pode ser vázio!");
+            throw new Exception("O Sexo deve ser Masculino ou Feminino!");
         }
     }
-    public string getEmail()
+    public string getSexo()
     {
-        return _email;
+        return _sexo;
     }
 
-    public void setDataAdmissao(DateTime dataAdmissao)
+    public void setAltura(double altura)
     {
-        if (dataAdmissao <= DateTime.Now)
+        if (altura > 0)
         {
-            _dataAdmissao = dataAdmissao;
+            _altura = altura;
         }
         else
         {
-            throw new Exception("A Data de Admissão deve ser menor ou igual à atual!");
+            throw new Exception("A altura deve ser maior do que zero!");
         }
     }
-    public DateTime getDataAdmissao()
+    public double getAltura()
     {
-        return _dataAdmissao;
+        return _altura;
     }
 
-    public void setSalario(double salario)
+    public void setPeso(double peso)
     {
-        if (salario >= 0)
+        if (peso > 0)
         {
-            _salario = salario;
+            _peso = peso;
         }
         else
         {
-            throw new Exception("O salário não pode ser negativo!");
+            throw new Exception("A peso deve ser maior do que zero!");
         }
     }
-    public double getSalario()
+    public double getPeso()
     {
-        return _salario;
+        return _peso;
     }
 }
